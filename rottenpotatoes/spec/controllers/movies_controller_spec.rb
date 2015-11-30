@@ -68,7 +68,7 @@ describe MoviesController do
             it 'should redirect to the index view for the requested feature.' do
                 allow(@movie1).to receive(:similar_directors).and_return([@movie1])
                 get :directors, :id=>@any_possible_id
-                expect(response).to redirect_to(root_path)
+                expect(response).to redirect_to(movies_path)
             end
         end
     end
